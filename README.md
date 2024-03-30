@@ -22,7 +22,7 @@ php flarum cache:clear
 
 Once enabled, this extension will add a `Clerk` option to the settings page of `fof/oauth`. Toggle `Clerk` on, and hit the configure icon.
 
-Follow the [Clerk documentation](https://api.clerk.com/authentication/sign-in-with-clerk)
+Follow the [Clerk documentation](https://clerk.com/docs)
 
 You can use Postman to set up an OAuth application by sending the requests following the documentation.
 
