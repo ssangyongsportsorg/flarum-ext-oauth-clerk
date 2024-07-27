@@ -1,20 +1,20 @@
 <?php
 
 /*
- * This file is part of umhelper/oauth-clerk.
+ * This file is part of blomstra/oauth-slack.
  *
- * Copyright (c) 2023 UMHelper.
+ * Copyright (c) 2022 Team Blomstra.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace UMHelper\OAuthClerk\Providers;
+namespace Blomstra\OAuthSlack\Providers;
 
 use Illuminate\Support\Arr;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
-class ClerkResourceOwner implements ResourceOwnerInterface
+class SlackResourceOwner implements ResourceOwnerInterface
 {
     protected $response;
 
@@ -30,31 +30,15 @@ class ClerkResourceOwner implements ResourceOwnerInterface
 
     public function getId(): ?string
     {
-        return Arr::get($this->response, 'user_id');
+        return Arr::get($this->response, 'id');
     }
 
     public function getName(): ?string
     {
         return Arr::get($this->response, 'name');
     }
-
-    public function getFirstName(): ?string
-    {
-        return Arr::get($this->response, 'given_name');
-    }
-
-    public function getLastName(): ?string
-    {
-        return Arr::get($this->response, 'family_name');
-    }
-
-    public function getEmail(): ?string
-    {
-        return Arr::get($this->response, 'email');
-    }
-
     public function getImage192(): ?string
     {
-        return Arr::get($this->response, 'picture');
+        return Arr::get($this->response, 'avatar');
     }
 }
