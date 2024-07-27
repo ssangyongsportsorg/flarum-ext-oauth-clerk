@@ -53,7 +53,7 @@ class Clerk extends Provider
 
     public function options(): array
     {
-        return ['scope' => ['email profile']];
+        return ['scope' => ['openid', 'email', 'offline_access',  'profile']];
     }
 
     public function suggestions(Registration $registration, $user, string $token)
