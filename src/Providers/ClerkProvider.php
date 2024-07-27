@@ -26,17 +26,17 @@ class ClerkProvider extends AbstractProvider
     }
     public function getBaseAuthorizationUrl()
     {
-        return 'https://' . $this->getOauthDomain() . '/oauth/authorize';
+        return 'https://' . $this->getOauthDomain() . '/oidc/auth';
     }
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'https://' . $this->getOauthDomain() . '/oauth/token';
+        return 'https://' . $this->getOauthDomain() . '/oidc/token';
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return 'https://' . $this->getOauthDomain() . '/oauth/userinfo';
+        return 'https://' . $this->getOauthDomain() . '/oidc/me';
     }
 
     protected function getDefaultScopes()
